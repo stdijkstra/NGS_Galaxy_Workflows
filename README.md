@@ -1,5 +1,5 @@
 # NGS Galaxy workflows
-Here is an overview of all my workflows from [Galaxy](usegalaxy.eu) with a preview.
+Here is an overview of all my workflows from [Galaxy](https://usegalaxy.eu/) with a preview.
 ### [Workflow of hybrid assembly using Unicycler](/NGS_Galaxy_Workflow_Hybrid_assembly_using_Unicycler.ga)
 ![Workflow of hybrid assembly using Unicycler](/NGS_Galaxy_Workflow_Hybrid_assembly_using_Unicycler.png)
 
