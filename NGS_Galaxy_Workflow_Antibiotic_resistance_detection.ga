@@ -1,0 +1,570 @@
+{
+    "a_galaxy_workflow": "true",
+    "annotation": "",
+    "comments": [],
+    "format-version": "0.1",
+    "name": "Workflow constructed from history 'Antibiotic resistance detection'",
+    "steps": {
+        "0": {
+            "annotation": "",
+            "content_id": null,
+            "errors": null,
+            "id": 0,
+            "input_connections": {},
+            "inputs": [
+                {
+                    "description": "",
+                    "name": "Input Dataset Collection"
+                }
+            ],
+            "label": "Input Dataset Collection",
+            "name": "Input dataset collection",
+            "outputs": [],
+            "position": {
+                "left": 0,
+                "top": 0
+            },
+            "tool_id": null,
+            "tool_state": "{\"optional\": false, \"tag\": null, \"collection_type\": \"list\"}",
+            "tool_version": null,
+            "type": "data_collection_input",
+            "uuid": "878d3f4f-70b0-415f-876f-119cedd3c8ce",
+            "when": null,
+            "workflow_outputs": []
+        },
+        "1": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/iuc/minimap2/minimap2/2.26+galaxy0",
+            "errors": null,
+            "id": 1,
+            "input_connections": {
+                "fastq_input|fastq_input1": {
+                    "id": 0,
+                    "output_name": "output"
+                },
+                "reference_source|ref_file": {
+                    "id": 0,
+                    "output_name": "output"
+                }
+            },
+            "inputs": [
+                {
+                    "description": "runtime parameter for tool Map with minimap2",
+                    "name": "fastq_input"
+                },
+                {
+                    "description": "runtime parameter for tool Map with minimap2",
+                    "name": "reference_source"
+                }
+            ],
+            "label": null,
+            "name": "Map with minimap2",
+            "outputs": [
+                {
+                    "name": "alignment_output",
+                    "type": "bam"
+                }
+            ],
+            "position": {
+                "left": 280,
+                "top": 0
+            },
+            "post_job_actions": {},
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/iuc/minimap2/minimap2/2.26+galaxy0",
+            "tool_shed_repository": {
+                "changeset_revision": "be1d967337e4",
+                "name": "minimap2",
+                "owner": "iuc",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"__input_ext\": \"input\", \"alignment_options\": {\"splicing\": {\"splice_mode\": \"preset\", \"__current_case__\": 0}, \"A\": null, \"B\": null, \"O\": null, \"O2\": null, \"E\": null, \"E2\": null, \"z\": null, \"z2\": null, \"s\": null, \"no_end_flt\": true}, \"chromInfo\": \"/opt/galaxy/tool-data/shared/ucsc/chrom/?.len\", \"fastq_input\": {\"fastq_input_selector\": \"single\", \"__current_case__\": 0, \"fastq_input1\": {\"__class__\": \"ConnectedValue\"}, \"analysis_type_selector\": \"ava-ont\"}, \"fastq_input|fastq_input1|__identifier__\": \"RB12.fasta\", \"indexing_options\": {\"H\": false, \"k\": null, \"w\": null, \"I\": null}, \"io_options\": {\"output_format\": \"paf\", \"Q\": false, \"L\": false, \"K\": null, \"cs\": null, \"c\": false, \"eqx\": false, \"Y\": false}, \"mapping_options\": {\"N\": null, \"F\": null, \"f\": null, \"kmer_ocurrence_interval\": {\"interval\": \"\", \"__current_case__\": 1}, \"min_occ_floor\": null, \"q_occ_frac\": \"0.01\", \"g\": null, \"r\": null, \"n\": null, \"m\": null, \"max_chain_skip\": null, \"max_chain_iter\": null, \"X\": false, \"p\": null, \"mask_len\": null}, \"reference_source\": {\"reference_source_selector\": \"history\", \"__current_case__\": 1, \"ref_file\": {\"__class__\": \"ConnectedValue\"}}, \"reference_source|ref_file|__identifier__\": \"RB12.fasta\", \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "2.26+galaxy0",
+            "type": "tool",
+            "uuid": "184405ab-39a9-4201-86cb-cddfb14c05f5",
+            "when": null,
+            "workflow_outputs": []
+        },
+        "2": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/iuc/nanoplot/nanoplot/1.41.0+galaxy0",
+            "errors": null,
+            "id": 2,
+            "input_connections": {
+                "mode|reads|files": {
+                    "id": 0,
+                    "output_name": "output"
+                }
+            },
+            "inputs": [],
+            "label": null,
+            "name": "NanoPlot",
+            "outputs": [
+                {
+                    "name": "output_html",
+                    "type": "html"
+                },
+                {
+                    "name": "nanostats",
+                    "type": "tabular"
+                },
+                {
+                    "name": "nanostats_post_filtering",
+                    "type": "tabular"
+                },
+                {
+                    "name": "read_length",
+                    "type": "png"
+                },
+                {
+                    "name": "log_read_length",
+                    "type": "png"
+                }
+            ],
+            "position": {
+                "left": 282,
+                "top": 239
+            },
+            "post_job_actions": {},
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/iuc/nanoplot/nanoplot/1.41.0+galaxy0",
+            "tool_shed_repository": {
+                "changeset_revision": "0f1c34698076",
+                "name": "nanoplot",
+                "owner": "iuc",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"__input_ext\": \"input\", \"chromInfo\": \"/opt/galaxy/tool-data/shared/ucsc/chrom/?.len\", \"customization\": {\"color\": null, \"plots\": null, \"N50\": false}, \"filter\": {\"maxlength\": null, \"minlength\": null, \"drop_outliers\": false, \"downsample\": null, \"loglength\": false, \"percentqual\": false, \"alength\": false, \"minqual\": null, \"runtime_until\": null, \"readtype\": null, \"barcoded\": false, \"no_supplementary\": false}, \"mode\": {\"choice\": \"batch\", \"__current_case__\": 0, \"reads\": {\"type\": \"fasta\", \"__current_case__\": 1, \"files\": {\"__class__\": \"ConnectedValue\"}}}, \"mode|reads|files|__identifier__\": \"RB12.fasta\", \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "1.41.0+galaxy0",
+            "type": "tool",
+            "uuid": "851cde4d-b31f-4f74-918d-2cecb0154f76",
+            "when": null,
+            "workflow_outputs": []
+        },
+        "3": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/iuc/unicycler/unicycler/0.5.0+galaxy1",
+            "errors": null,
+            "id": 3,
+            "input_connections": {
+                "long": {
+                    "id": 0,
+                    "output_name": "output"
+                }
+            },
+            "inputs": [],
+            "label": null,
+            "name": "Create assemblies with Unicycler",
+            "outputs": [
+                {
+                    "name": "spades_collection",
+                    "type": "input"
+                },
+                {
+                    "name": "assembly_graph",
+                    "type": "gfa1"
+                },
+                {
+                    "name": "assembly",
+                    "type": "fasta"
+                }
+            ],
+            "position": {
+                "left": 282,
+                "top": 535
+            },
+            "post_job_actions": {},
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/iuc/unicycler/unicycler/0.5.0+galaxy1",
+            "tool_shed_repository": {
+                "changeset_revision": "8f9f06995f98",
+                "name": "unicycler",
+                "owner": "iuc",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"__input_ext\": \"input\", \"chromInfo\": \"/opt/galaxy/tool-data/shared/ucsc/chrom/?.len\", \"graph_clean\": {\"min_component_size\": \"1000\", \"min_dead_end_size\": \"1000\"}, \"keep\": \"1\", \"linear_seqs\": \"0\", \"long\": {\"__class__\": \"ConnectedValue\"}, \"long|__identifier__\": \"RB12.fasta\", \"lr_align\": {\"contamination\": null, \"scores\": \"3,-6,-5,-2\", \"low_score\": null, \"no_simple_bridges\": false}, \"min_anchor_seg_len\": null, \"min_fasta_length\": \"100\", \"mode\": \"normal\", \"paired_unpaired\": {\"fastq_input_selector\": \"none\", \"__current_case__\": 3}, \"reuse\": [], \"rotation\": {\"no_rotate\": false, \"start_genes\": null, \"start_gene_id\": \"90.0\", \"start_gene_cov\": \"95.0\"}, \"spades\": {\"min_kmer_frac\": \"0.2\", \"max_kmer_frac\": \"0.95\", \"kmers\": \"\", \"kmer_count\": \"10\", \"depth_filter\": \"0.25\", \"largest_component\": false}, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "0.5.0+galaxy1",
+            "type": "tool",
+            "uuid": "324106c4-ca4b-4098-bd71-d1821d5c81b0",
+            "when": null,
+            "workflow_outputs": []
+        },
+        "4": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/iuc/miniasm/miniasm/0.3_r179+galaxy1",
+            "errors": null,
+            "id": 4,
+            "input_connections": {
+                "paf": {
+                    "id": 1,
+                    "output_name": "alignment_output"
+                },
+                "readFile": {
+                    "id": 0,
+                    "output_name": "output"
+                }
+            },
+            "inputs": [],
+            "label": null,
+            "name": "miniasm",
+            "outputs": [
+                {
+                    "name": "gfa",
+                    "type": "tabular"
+                }
+            ],
+            "position": {
+                "left": 570,
+                "top": 190
+            },
+            "post_job_actions": {},
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/iuc/miniasm/miniasm/0.3_r179+galaxy1",
+            "tool_shed_repository": {
+                "changeset_revision": "b799a615995d",
+                "name": "miniasm",
+                "owner": "iuc",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"__input_ext\": \"input\", \"chromInfo\": \"/opt/galaxy/tool-data/shared/ucsc/chrom/?.len\", \"graph\": {\"maxGapDiff\": \"1000\", \"maxBubDist\": \"50000\", \"minUtgSize\": \"4\", \"nRounds\": \"3\", \"finalDropRatio\": \"0.8\"}, \"overlapping\": {\"minOvlp\": \"1000\", \"maxHang\": \"1000\", \"intThres\": \"0.08\"}, \"paf\": {\"__class__\": \"ConnectedValue\"}, \"paf|__identifier__\": \"RB12.fasta\", \"preselection\": {\"minMatch\": \"100\", \"minIden\": \"0.05\", \"minSpan\": \"1000\", \"minCov\": \"3\"}, \"readFile\": {\"__class__\": \"ConnectedValue\"}, \"readFile|__identifier__\": \"RB12.fasta\", \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "0.3_r179+galaxy1",
+            "type": "tool",
+            "uuid": "c59eb4b3-2bce-46ba-88e7-16a099753f98",
+            "when": null,
+            "workflow_outputs": []
+        },
+        "5": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/iuc/bandage/bandage_image/2022.09+galaxy4",
+            "errors": null,
+            "id": 5,
+            "input_connections": {
+                "input_file": {
+                    "id": 3,
+                    "output_name": "assembly_graph"
+                }
+            },
+            "inputs": [],
+            "label": null,
+            "name": "Bandage Image",
+            "outputs": [
+                {
+                    "name": "outfile",
+                    "type": "jpg"
+                }
+            ],
+            "position": {
+                "left": 570,
+                "top": 360
+            },
+            "post_job_actions": {},
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/iuc/bandage/bandage_image/2022.09+galaxy4",
+            "tool_shed_repository": {
+                "changeset_revision": "ddddce450736",
+                "name": "bandage",
+                "owner": "iuc",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"__input_ext\": \"input\", \"chromInfo\": \"/opt/galaxy/tool-data/shared/ucsc/chrom/?.len\", \"fontsize\": null, \"height\": \"1000\", \"input_file\": {\"__class__\": \"ConnectedValue\"}, \"input_file|__identifier__\": \"RB12.fasta\", \"lengths\": false, \"names\": false, \"nodewidth\": null, \"output_format\": \"jpg\", \"width\": null, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "2022.09+galaxy4",
+            "type": "tool",
+            "uuid": "48bb003d-412b-46e9-bebd-fb34ed0f6874",
+            "when": null,
+            "workflow_outputs": []
+        },
+        "6": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/iuc/plasflow/PlasFlow/1.1.0+galaxy0",
+            "errors": null,
+            "id": 6,
+            "input_connections": {
+                "readFile": {
+                    "id": 3,
+                    "output_name": "assembly"
+                }
+            },
+            "inputs": [],
+            "label": null,
+            "name": "PlasFlow",
+            "outputs": [
+                {
+                    "name": "probability_table",
+                    "type": "tabular"
+                },
+                {
+                    "name": "chromosomes",
+                    "type": "fasta"
+                },
+                {
+                    "name": "plasmids",
+                    "type": "fasta"
+                },
+                {
+                    "name": "unclassified",
+                    "type": "fasta"
+                }
+            ],
+            "position": {
+                "left": 570,
+                "top": 540
+            },
+            "post_job_actions": {},
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/iuc/plasflow/PlasFlow/1.1.0+galaxy0",
+            "tool_shed_repository": {
+                "changeset_revision": "1d2a91ab28b7",
+                "name": "plasflow",
+                "owner": "iuc",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"__input_ext\": \"input\", \"chromInfo\": \"/opt/galaxy/tool-data/shared/ucsc/chrom/?.len\", \"readFile\": {\"__class__\": \"ConnectedValue\"}, \"readFile|__identifier__\": \"RB12.fasta\", \"threshold\": \"0.7\", \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "1.1.0+galaxy0",
+            "type": "tool",
+            "uuid": "eb74b307-96c2-468f-aa2f-80ad33780335",
+            "when": null,
+            "workflow_outputs": []
+        },
+        "7": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/nml/staramr/staramr_search/0.10.0+galaxy1",
+            "errors": null,
+            "id": 7,
+            "input_connections": {
+                "genomes": {
+                    "id": 3,
+                    "output_name": "assembly"
+                }
+            },
+            "inputs": [],
+            "label": null,
+            "name": "staramr",
+            "outputs": [
+                {
+                    "name": "blast_hits",
+                    "type": "input"
+                },
+                {
+                    "name": "mlst",
+                    "type": "tabular"
+                },
+                {
+                    "name": "summary",
+                    "type": "tabular"
+                },
+                {
+                    "name": "detailed_summary",
+                    "type": "tabular"
+                },
+                {
+                    "name": "resfinder",
+                    "type": "tabular"
+                },
+                {
+                    "name": "plasmidfinder",
+                    "type": "tabular"
+                },
+                {
+                    "name": "settings",
+                    "type": "txt"
+                },
+                {
+                    "name": "excel",
+                    "type": "xlsx"
+                }
+            ],
+            "position": {
+                "left": 570,
+                "top": 790
+            },
+            "post_job_actions": {},
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/nml/staramr/staramr_search/0.10.0+galaxy1",
+            "tool_shed_repository": {
+                "changeset_revision": "3b22de20bd4b",
+                "name": "staramr",
+                "owner": "nml",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"__input_ext\": \"input\", \"advanced\": {\"pid_threshold\": \"98.0\", \"plength_resfinder\": \"60.0\", \"plength_pointfinder\": \"95.0\", \"plength_plasmidfinder\": \"60.0\", \"genome_size_lower_bound\": \"4000000\", \"genome_size_upper_bound\": \"6000000\", \"minimum_N50_value\": \"10000\", \"minimum_contig_length\": \"300\", \"unacceptable_number_contigs\": \"1000\", \"report_all_blast\": false, \"exclude_negatives\": false, \"exclude_resistance_phenotypes\": false, \"mlst_scheme\": \"auto\", \"exclude_genes\": {\"exclude_genes_condition\": \"default\", \"__current_case__\": 0}, \"complex_mutations\": {\"complex_mutations_condition\": \"default\", \"__current_case__\": 0}, \"plasmidfinder_type\": \"include_all\"}, \"chromInfo\": \"/opt/galaxy/tool-data/shared/ucsc/chrom/?.len\", \"genomes\": {\"__class__\": \"ConnectedValue\"}, \"pointfinder_db\": {\"use_pointfinder\": \"disabled\", \"__current_case__\": 0}, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "0.10.0+galaxy1",
+            "type": "tool",
+            "uuid": "c70f6ae8-7bf9-425d-a8b5-4b789b9bcdf4",
+            "when": null,
+            "workflow_outputs": []
+        },
+        "8": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/iuc/gfa_to_fa/gfa_to_fa/0.1.2",
+            "errors": null,
+            "id": 8,
+            "input_connections": {
+                "in_gfa": {
+                    "id": 4,
+                    "output_name": "gfa"
+                }
+            },
+            "inputs": [],
+            "label": null,
+            "name": "GFA to FASTA",
+            "outputs": [
+                {
+                    "name": "out_fa",
+                    "type": "fasta"
+                }
+            ],
+            "position": {
+                "left": 842,
+                "top": 137
+            },
+            "post_job_actions": {},
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/iuc/gfa_to_fa/gfa_to_fa/0.1.2",
+            "tool_shed_repository": {
+                "changeset_revision": "e33c82b63727",
+                "name": "gfa_to_fa",
+                "owner": "iuc",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"__input_ext\": \"tabular\", \"chromInfo\": \"/opt/galaxy/tool-data/shared/ucsc/chrom/?.len\", \"in_gfa\": {\"__class__\": \"ConnectedValue\"}, \"in_gfa|__identifier__\": \"RB12.fasta\", \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "0.1.2",
+            "type": "tool",
+            "uuid": "76da609c-95d8-4410-8234-6de3bbc96659",
+            "when": null,
+            "workflow_outputs": []
+        },
+        "9": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/iuc/bandage/bandage_image/2022.09+galaxy4",
+            "errors": null,
+            "id": 9,
+            "input_connections": {
+                "input_file": {
+                    "id": 4,
+                    "output_name": "gfa"
+                }
+            },
+            "inputs": [],
+            "label": null,
+            "name": "Bandage Image",
+            "outputs": [
+                {
+                    "name": "outfile",
+                    "type": "jpg"
+                }
+            ],
+            "position": {
+                "left": 842,
+                "top": 291
+            },
+            "post_job_actions": {},
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/iuc/bandage/bandage_image/2022.09+galaxy4",
+            "tool_shed_repository": {
+                "changeset_revision": "ddddce450736",
+                "name": "bandage",
+                "owner": "iuc",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"__input_ext\": \"input\", \"chromInfo\": \"/opt/galaxy/tool-data/shared/ucsc/chrom/?.len\", \"fontsize\": null, \"height\": \"1000\", \"input_file\": {\"__class__\": \"ConnectedValue\"}, \"input_file|__identifier__\": \"RB12.fasta\", \"lengths\": false, \"names\": false, \"nodewidth\": null, \"output_format\": \"jpg\", \"width\": null, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "2022.09+galaxy4",
+            "type": "tool",
+            "uuid": "09a7ea8b-d6a8-4e1b-9a54-6207933077fd",
+            "when": null,
+            "workflow_outputs": []
+        },
+        "10": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/iuc/minimap2/minimap2/2.26+galaxy0",
+            "errors": null,
+            "id": 10,
+            "input_connections": {
+                "fastq_input|fastq_input1": {
+                    "id": 0,
+                    "output_name": "output"
+                },
+                "reference_source|ref_file": {
+                    "id": 8,
+                    "output_name": "out_fa"
+                }
+            },
+            "inputs": [
+                {
+                    "description": "runtime parameter for tool Map with minimap2",
+                    "name": "fastq_input"
+                },
+                {
+                    "description": "runtime parameter for tool Map with minimap2",
+                    "name": "reference_source"
+                }
+            ],
+            "label": null,
+            "name": "Map with minimap2",
+            "outputs": [
+                {
+                    "name": "alignment_output",
+                    "type": "bam"
+                }
+            ],
+            "position": {
+                "left": 1100,
+                "top": 10
+            },
+            "post_job_actions": {},
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/iuc/minimap2/minimap2/2.26+galaxy0",
+            "tool_shed_repository": {
+                "changeset_revision": "be1d967337e4",
+                "name": "minimap2",
+                "owner": "iuc",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"__input_ext\": \"input\", \"alignment_options\": {\"splicing\": {\"splice_mode\": \"preset\", \"__current_case__\": 0}, \"A\": null, \"B\": null, \"O\": null, \"O2\": null, \"E\": null, \"E2\": null, \"z\": null, \"z2\": null, \"s\": null, \"no_end_flt\": true}, \"chromInfo\": \"/opt/galaxy/tool-data/shared/ucsc/chrom/?.len\", \"fastq_input\": {\"fastq_input_selector\": \"single\", \"__current_case__\": 0, \"fastq_input1\": {\"__class__\": \"ConnectedValue\"}, \"analysis_type_selector\": \"map-pb\"}, \"fastq_input|fastq_input1|__identifier__\": \"RB12.fasta\", \"indexing_options\": {\"H\": false, \"k\": null, \"w\": null, \"I\": null}, \"io_options\": {\"output_format\": \"paf\", \"Q\": false, \"L\": false, \"K\": null, \"cs\": null, \"c\": false, \"eqx\": false, \"Y\": false}, \"mapping_options\": {\"N\": null, \"F\": null, \"f\": null, \"kmer_ocurrence_interval\": {\"interval\": \"\", \"__current_case__\": 1}, \"min_occ_floor\": null, \"q_occ_frac\": \"0.01\", \"g\": null, \"r\": null, \"n\": null, \"m\": null, \"max_chain_skip\": null, \"max_chain_iter\": null, \"X\": false, \"p\": null, \"mask_len\": null}, \"reference_source\": {\"reference_source_selector\": \"history\", \"__current_case__\": 1, \"ref_file\": {\"__class__\": \"ConnectedValue\"}}, \"reference_source|ref_file|__identifier__\": \"RB12.fasta\", \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "2.26+galaxy0",
+            "type": "tool",
+            "uuid": "2109b078-8083-418f-8a66-71b9494693e6",
+            "when": null,
+            "workflow_outputs": []
+        },
+        "11": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/bgruening/racon/racon/1.5.0+galaxy1",
+            "errors": null,
+            "id": 11,
+            "input_connections": {
+                "corrected_reads": {
+                    "id": 8,
+                    "output_name": "out_fa"
+                },
+                "overlaps": {
+                    "id": 10,
+                    "output_name": "alignment_output"
+                },
+                "reads": {
+                    "id": 0,
+                    "output_name": "output"
+                }
+            },
+            "inputs": [],
+            "label": null,
+            "name": "Racon",
+            "outputs": [
+                {
+                    "name": "consensus",
+                    "type": "fasta"
+                }
+            ],
+            "position": {
+                "left": 1370,
+                "top": 70
+            },
+            "post_job_actions": {},
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/bgruening/racon/racon/1.5.0+galaxy1",
+            "tool_shed_repository": {
+                "changeset_revision": "78c533842eeb",
+                "name": "racon",
+                "owner": "bgruening",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"__input_ext\": \"input\", \"chromInfo\": \"/opt/galaxy/tool-data/shared/ucsc/chrom/?.len\", \"corrected_reads\": {\"__class__\": \"ConnectedValue\"}, \"corrected_reads|__identifier__\": \"RB12.fasta\", \"error_threshold\": \"0.3\", \"fragment_correction\": false, \"gap\": \"-4\", \"include_unpolished\": false, \"match\": \"3\", \"mismatch\": \"-5\", \"no_trimming\": false, \"overlaps\": {\"__class__\": \"ConnectedValue\"}, \"overlaps|__identifier__\": \"RB12.fasta\", \"quality_threshold\": \"10.0\", \"reads\": {\"__class__\": \"ConnectedValue\"}, \"reads|__identifier__\": \"RB12.fasta\", \"window_length\": \"500\", \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "1.5.0+galaxy1",
+            "type": "tool",
+            "uuid": "749e9f78-fe08-443a-9174-cc4415749464",
+            "when": null,
+            "workflow_outputs": []
+        }
+    },
+    "tags": [],
+    "uuid": "c2580150-6ed1-4d6a-bd8d-d43c57950134",
+    "version": 1
+}
